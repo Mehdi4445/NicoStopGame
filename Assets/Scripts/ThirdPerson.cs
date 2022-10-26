@@ -5,9 +5,7 @@ using UnityEngine;
 public class ThirdPerson : MonoBehaviour
 {
 
-    public FixedJoyStick LeftJoystick;
-    public FixedButton Button;
-    public FixedTouchfield Touchfield;
+
     // Start is called before the first frame update
     void Start()
     {
