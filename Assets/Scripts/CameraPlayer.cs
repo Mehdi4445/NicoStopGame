@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthBar : MonoBehaviour
+public class CameraPlayer : MonoBehaviour
 {
-    public UnityEngine.UIElements.ProgressBar Pb;
-    
+    public Vector3 offset;
+    public GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,6 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Pb.BarValue = 50;
-        
+        transform.position = Player.transform.position + offset;
     }
 }
