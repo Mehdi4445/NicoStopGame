@@ -7,8 +7,7 @@ public class MenuController : MonoBehaviour
 {
 
     public void PlayBtn(){
-        Debug.Log("fhfhfhffhf");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         
     }
 

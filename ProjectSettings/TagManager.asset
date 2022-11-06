@@ -7,6 +7,7 @@ TagManager:
   - Collectable
   - True
   - False
+  - GameMusic
   layers:
   - Default
   - TransparentFX
