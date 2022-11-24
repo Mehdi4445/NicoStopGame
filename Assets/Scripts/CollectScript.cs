@@ -9,6 +9,15 @@ public class CollectScript : MonoBehaviour
     public GameObject Questionspanel;
     public GameObject Object1, Object2, Object3;
     public GameObject Ques1, Ques2, Ques3;
+    bool FirstFound = false;
+    bool SecondFound = false;
+    bool ThirdFound = false;
+
+
+    public GameObject WinPanel; 
+    public GameObject LosePanel;
+
+
 
     public int health;
     public int numHearts;
@@ -33,6 +42,7 @@ public class CollectScript : MonoBehaviour
         if (other.gameObject == Object1)
         {
             Destroy(other.gameObject);
+            FirstFound = true;
             Ques1.SetActive(true);
             Questionspanel.SetActive(true);
 
@@ -42,6 +52,7 @@ public class CollectScript : MonoBehaviour
         if (other.gameObject == Object2)
         {
             Destroy(other.gameObject);
+            SecondFound = true;
             Ques2.SetActive(true);
             Questionspanel.SetActive(true);
 
@@ -50,6 +61,7 @@ public class CollectScript : MonoBehaviour
         if (other.gameObject == Object3)
         {
             Destroy(other.gameObject);
+            ThirdFound = true;
             Ques3.SetActive(true);
             Questionspanel.SetActive(true);
 
@@ -91,6 +103,21 @@ public class CollectScript : MonoBehaviour
     public void WrongAnswer()
     {
         health -= 1;
+    }
+
+    public void EndGame()
+    {
+        if (ThirdFound && SecondFound && ThirdFound && health > 0)
+        {
+            Debug.Log("you won");
+            WinPanel.SetActive(true);
+        }
+
+        if (health <= 0)
+        {
+            Debug.Log("you lost");
+            LosePanel.SetActive(true);
+        }
     }
     }
     

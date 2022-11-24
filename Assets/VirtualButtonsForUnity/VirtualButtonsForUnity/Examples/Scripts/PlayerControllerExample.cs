@@ -7,7 +7,6 @@ public class PlayerControllerExample : MonoBehaviour
 {
 
     [SerializeField] private float playerSpeed = 2.0f;
-    [SerializeField] private float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
 
     protected CharacterController controller;
@@ -25,11 +24,11 @@ public class PlayerControllerExample : MonoBehaviour
 
     private void Update()
     {
-        groundedPlayer = controller.isGrounded;
+      /*  groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
-        }
+        }*/
 
         Vector2 movement = playerInput.Player.Move.ReadValue<Vector2>();
         Vector3 move = new Vector3(movement.x, 0, movement.y);
@@ -41,17 +40,12 @@ public class PlayerControllerExample : MonoBehaviour
             anim.SetBool("Walking",true);
         }
         else
-                    anim.SetBool("Walking",false);
+        anim.SetBool("Walking",false);
 
 
-        // bool jumpPress = playerInput.Player.Jump.IsPressed();
-        bool jumpPress = playerInput.Player.Jump.triggered;
-        if (jumpPress && groundedPlayer)
-        {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-        }
+        
 
-        playerVelocity.y += gravityValue * Time.deltaTime;
+     //  playerVelocity.y = gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
 
