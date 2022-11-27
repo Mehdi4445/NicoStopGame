@@ -35,6 +35,7 @@ public class CollectScript : MonoBehaviour
     void Update()
     {
         HealthController();
+        EndGame();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -113,7 +114,7 @@ public class CollectScript : MonoBehaviour
             WinPanel.SetActive(true);
         }
 
-        if (health <= 0)
+        if (health == 0)
         {
             Debug.Log("you lost");
             LosePanel.SetActive(true);

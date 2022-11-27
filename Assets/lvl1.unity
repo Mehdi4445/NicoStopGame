@@ -831,7 +831,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Size: {x: 0.15, y: 0.15, z: 0.15}
   m_Center: {x: -0.000005189795, y: 0.039550282, z: 0}
 --- !u!4 &134145960 stripped
 Transform:
@@ -7371,7 +7371,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 261}
-  m_SizeDelta: {x: 1000, y: 50}
+  m_SizeDelta: {x: 1499.2, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &439753654
 MonoBehaviour:
@@ -7393,7 +7393,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAME OVER
+  m_text: "Lorsque la richesse est perdue, rien n'est perdu, quand la sant\xE9 est
+    perdue, quelque chose est perdu."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b1db62c96581c2748a6569698777ed07, type: 2}
   m_sharedMaterial: {fileID: 8897011939536555174, guid: b1db62c96581c2748a6569698777ed07, type: 2}
@@ -7420,8 +7421,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 200
-  m_fontSizeBase: 200
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8168,7 +8169,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 261}
-  m_SizeDelta: {x: 1000, y: 50}
+  m_SizeDelta: {x: 1329.79, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &602538187
 MonoBehaviour:
@@ -8190,7 +8191,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GOOD JOB!
+  m_text: "Le temps et la sant\xE9 sont deux atouts pr\xE9cieux que nous appr\xE9cions
+    jusqu'\xE0 ce qu'ils aient \xE9t\xE9 \xE9puis\xE9s."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b1db62c96581c2748a6569698777ed07, type: 2}
   m_sharedMaterial: {fileID: 8897011939536555174, guid: b1db62c96581c2748a6569698777ed07, type: 2}
@@ -8217,8 +8219,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 200
-  m_fontSizeBase: 200
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8307,7 +8309,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 619843329}
-  - component: {fileID: 619843332}
   - component: {fileID: 619843334}
   - component: {fileID: 619843333}
   - component: {fileID: 619843335}
@@ -8326,7 +8327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619843326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.24, y: 3.25, z: 73.98}
+  m_LocalPosition: {x: 19.24, y: 4.76, z: 73.98}
   m_LocalScale: {x: 2.0880427, y: 2.0880427, z: 2.0880427}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8334,18 +8335,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &619843332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619843326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17b53887863ad5e4ca5a14a7a834bc82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &619843333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8359,7 +8348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
-  gravityValue: 1
+  gravity: 60
   anim: {fileID: 1276336855}
 --- !u!143 &619843334
 CharacterController:
@@ -8372,8 +8361,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.9
-  m_Radius: 0.66
+  m_Height: 1.7
+  m_Radius: 0.58
   m_SlopeLimit: 5
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -31823,7 +31812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -35}
+  m_AnchoredPosition: {x: 0, y: -81}
   m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308621531
@@ -38615,7 +38604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TRY AGAIN
+  m_text: REJOUER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b1db62c96581c2748a6569698777ed07, type: 2}
   m_sharedMaterial: {fileID: 8897011939536555174, guid: b1db62c96581c2748a6569698777ed07, type: 2}
@@ -39845,7 +39834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7994729574101362313, guid: 032428d81191245d4ae5a23a0a301ae9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -8.000122
+      value: -8.000244
       objectReference: {fileID: 0}
     - target: {fileID: 7994729574101362313, guid: 032428d81191245d4ae5a23a0a301ae9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

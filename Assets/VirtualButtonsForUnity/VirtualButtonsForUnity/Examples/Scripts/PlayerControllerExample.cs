@@ -7,12 +7,17 @@ public class PlayerControllerExample : MonoBehaviour
 {
 
     [SerializeField] private float playerSpeed = 2.0f;
-    [SerializeField] private float gravityValue = -9.81f;
+   // [SerializeField] private float gravityValue = -9.81f;
 
     protected CharacterController controller;
     protected PlayerActionsExample playerInput;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
+    bool enableMobileInput;
+
+    public float gravity ;
+
+    private Vector3 moveDirection = Vector3.zero;
 
     public Animator anim;
 
@@ -20,42 +25,52 @@ public class PlayerControllerExample : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         playerInput = new PlayerActionsExample();
+        anim.SetBool("Walking", false);
+
     }
 
     private void Update()
     {
-      /*  groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
+        if (controller.isGrounded && moveDirection.y < 0)
         {
-            playerVelocity.y = 0f;
-        }*/
-
+            moveDirection.y = 0f;
+        }
         Vector2 movement = playerInput.Player.Move.ReadValue<Vector2>();
-        Vector3 move = new Vector3(movement.x, 0, movement.y);
-        controller.Move(move * Time.deltaTime * playerSpeed);
-
-        if (move != Vector3.zero)
+        if (controller.isGrounded)
         {
-            gameObject.transform.forward = move;
-            anim.SetBool("Walking",true);
+            moveDirection = new Vector3(movement.x, 0.0f, movement.y);
+            moveDirection *= playerSpeed;
+        }
+        if (moveDirection == new Vector3(0, 0, 0))
+        {
+            anim.SetBool("Walking", false);
+
         }
         else
-        anim.SetBool("Walking",false);
+        {
+            anim.SetBool("Walking", true);
+        }
+        Debug.Log(moveDirection);
+        moveDirection.y -= gravity * Time.deltaTime;
+
+        controller.Move(moveDirection * Time.deltaTime);
+        if (moveDirection != new Vector3(0, 0, 0))
+        {
+            gameObject.transform.forward = moveDirection * Time.deltaTime;
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y,0) ;
+        }
 
 
-        
-
-     //  playerVelocity.y = gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
     }
 
-    private void OnEnable()
+        private void OnEnable()
     {
         playerInput.Enable();
     }
 
     private void OnDisable()
     {
+        moveDirection = Vector3.zero;
         playerInput.Disable();
     }
 
