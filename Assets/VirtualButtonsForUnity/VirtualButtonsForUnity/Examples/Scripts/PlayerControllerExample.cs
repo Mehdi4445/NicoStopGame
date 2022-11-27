@@ -50,7 +50,6 @@ public class PlayerControllerExample : MonoBehaviour
         {
             anim.SetBool("Walking", true);
         }
-        Debug.Log(moveDirection);
         moveDirection.y -= gravity * Time.deltaTime;
 
         controller.Move(moveDirection * Time.deltaTime);

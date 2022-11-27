@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 9bc536b9aa58dbb4ca7f5bffd65b43e3, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: be47bb74e7004e844968b386fcf77a1f, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -7078,12 +7078,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterRenderers:
   - {fileID: 1823207691}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   waterColor: {r: 0.14705884, g: 0.823, b: 0.834, a: 1}
   waterTex: {fileID: 2800000, guid: 92b12dd963505404f9025476f49cb3c9, type: 3}
   waterTile: {x: 0.12, y: 0.12}
@@ -8327,7 +8321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619843326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.24, y: 4.76, z: 73.98}
+  m_LocalPosition: {x: 35.75, y: 4.76, z: 73.98}
   m_LocalScale: {x: 2.0880427, y: 2.0880427, z: 2.0880427}
   m_ConstrainProportionsScale: 0
   m_Children:
